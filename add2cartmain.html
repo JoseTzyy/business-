@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        button.addToCartBtn {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.addToCartBtn:hover {
+            background-color: gray;
+        }
+
+        h5 {
+            color: black;
+            text-align: center;
+            font-size: 5.5em;
+            letter-spacing: 2px;
+            font-size: 17px;
+            text-transform: capitalize;
+            position: relative;
+            top: 2px;
+        }
+        
+        p{
+            color:black;
+        }
+       
+        
+    </style>
+
+    <title>ADD TO CART</title>
+</head>
+<body>
+<h5>ILLUMINATE FIXED GEAR SHOP</h5>
+
+<hr>
+<h1>CART</h1>
+
+<hr>
+
+</head>
+<body align= "middle" style="background-color: white;>
+    <nav>
+        <h1>ILLUMINATE FIXED GEAR </h1>
+        
+    <h5>ADD TO CART</h5>
+
+    <div class="product">
+        <img src="p1.jpeg" width="500" height="350">
+        <p>LOOK P24</p>
+        <p>Price: ₱668,947</p>
+        <button class="addToCartBtn" onclick="addToCart('LOOK P24', 668947)">ADD TO CART</button>
+    </div>
+
+    <br>
+
+    <div class="product">
+        <img src="p2.png" width="500" height="350">
+        <p>LOOK KG396</p>
+        <p>Price: ₱362,723</p>
+        <button class="addToCartBtn" onclick="addToCart('LOOK KG396', 362723)">ADD TO CART</button>
+    </div>
+
+    <br>
+
+    <div class="product">
+        <img src="p3.jpeg" width="500" height="350">
+        <p>LOOK T20</p>
+        <p>Price: ₱492,709</p>
+        <button class="addToCartBtn" onclick="addToCart('LOOK T20', 492709)">ADD TO CART</button>
+    </div>
+    
+    <br>
+    
+     <div class="product">
+        <img src="p4.png" width="500" height="350">
+        <p>PLANET X PRO 2018</p>
+        <p>Price: ₱103,384</p>
+        <button class="addToCartBtn" onclick="addToCart('PLANET X PRO 2018', 103384)">ADD TO CART</button>
+    </div>
+    
+    <br>
+    
+    <div class="product">
+        <img src="p5.png" width="500" height="350">
+        <p>ARGON 18 ELECTRON</p>
+        <p>Price: ₱381,664</p>
+        <button class="addToCartBtn" onclick="addToCart('ARGON 18 ELECTRON', 381664)">ADD TO CART</button>
+    </div>
+    
+    <br>
+    
+     <div class="product">
+        <img src="p6.png" width="500" height="350">
+        <p>CERVELO T1</p>
+        <p>Price: ₱91,992</p>
+        <button class="addToCartBtn" onclick="addToCart('CERVELO T1', 91992)">ADD TO CART</button>
+    </div>
+    
+    <br>
+    
+     <div class="product">
+        <img src="p7.png" width="500" height="350">
+        <p>FELT TK1</p>
+        <p>Price: ₱278,552</p>
+        <button class="addToCartBtn" onclick="addToCart('FELT TK1', 278552)">ADD TO CART</button>
+    </div>
+    
+    <br>
+    
+     <div class="product">
+        <img src="p8.png" width="500" height="350">
+        <p>DOLAN DF4</p>
+        <p>Price: ₱137,009</p>
+        <button class="addToCartBtn" onclick="addToCart('DOLAN DF4', 137009)">ADD TO CART</button>
+    </div>
+    
+    <br>
+    
+      <div class="product">
+        <img src="p9.png" width="500" height="350">
+        <p>FUJI TRACK ELITE</p>
+        <p>Price: ₱280,664</p>
+        <button class="addToCartBtn" onclick="addToCart('FUJI TRACK ELITE', 280664)">ADD TO CART</button>
+    </div>
+    
+    <br>
+    
+    <div class="product">
+        <img src="p10.png" width="500" height="350">
+        <p>CINELLI VIGORELLI SHARK</p>
+        <p>Price: ₱52,438</p>
+        <button class="addToCartBtn" onclick="addToCart('CINELLI', 52438)">ADD TO CART</button>
+    </div>
+    
+    
+
+    <div id="cart">
+        <h5>YOUR CART</h5>
+        <ul id="cart-items"></ul>
+        <p>Total Price: ₱<span id="totalPrice">0.00</span></p>
+        <button onclick="checkout()">BUY NOW</button>
+    </div>
+
+    <script>
+        let totalPrice = 0;
+
+        function addToCart(productName, productPricePHP) {
+            const cartItem = document.createElement("li");
+            cartItem.textContent = `${productName} - ₱${productPricePHP.toFixed(2)}`;
+            document.getElementById("cart-items").appendChild(cartItem);
+
+            // Update total price
+            totalPrice += productPricePHP;
+            document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
+        }
+
+        function checkout() {
+            alert("Thank you for your purchase! Your items have been added to delivery.");
+            document.getElementById("cart-items").innerHTML = "";
+            totalPrice = 0;
+            document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
+        }
+        
+        
+        
+    </script>
+
+</body>
+          </html>
+          
