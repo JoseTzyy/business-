@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        button.addToCartBtn {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.addToCartBtn:hover {
+            background-color: gray;
+        }
+
+        h5 {
+            color: black;
+            text-align: center;
+            font-size: 5.5em;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            position: relative;
+            top: 2px;
+        }
+
+        p {
+            color: black;
+        }
+    </style>
+    <title>ADD TO CART</title>
+</head>
+<body align="middle" style="background-color: white;">
+    <nav>
+        <h1>ILLUMINATE FIXED GEAR </h1>
+        <hr>
+        <h2>WHEELSET</h2>
+        <hr>
+
+        
+     <div class="product">
+        <img src="ws1.jpeg" width="500" height="350">
+        <p>FFWD RYOTT77 TRACK WHEELSET </p>
+        <p>Price: ₱94,761</p>
+        <button class="addToCartBtn" onclick="addToCart('FFWD RYOTT77 TRACK WHEELSET', 94761)">ADD TO CART</button>
+    </div>
+    
+    
+     <div class="product">
+        <img src="ws2.jpeg" width="500" height="350">
+        <p>FFWD FIVE-T</p>
+        <p>Price: ₱94,761</p>
+        <button class="addToCartBtn" onclick="addToCart('FFWD RYOTT77 TRACK WHEELSET', 94761)">ADD TO CART</button>
+    </div>
+  
+  <div class="product">
+        <img src="ws3.jpeg" width="500" height="350">
+        <p>FFWD FIVE-T DISC-T LION WHEELSET</p>
+        <p>Price: ₱218,410</p>
+        <button class="addToCartBtn" onclick="addToCart('FFWD FIVE-T DISC-T LION WHEELSET', 217410)">ADD TO CART</button>
+    </div>
+    
+    <div class="product">
+        <img src="ws4.jpeg" width="500" height="350">
+        <p>FFWD DISC-T SL</p>
+        <p>Price: ₱83,606</p>
+        <button class="addToCartBtn" onclick="addToCart('FFWD DISC-T SL', 83606)">ADD TO CART</button>
+    </div>
+  
+        
+          <div id="cart">
+        <h2>YOUR CART</h2>
+        <ul id="cart-items"></ul>
+        <p>Total Price: ₱<span id="totalPrice">0.00</span></p>
+       <button onclick="checkout()"> <a href="login.html">BUY NOW</a></button>
+    
+      <button class="backBtn"><a href="business.html">Back</a></button>
+
+    </div>
+    
+
+          <script>
+        let totalPrice = 0;
+
+        function addToCart(productName, productPricePHP) {
+            const cartItem = document.createElement("li");
+            cartItem.textContent = `${productName} - ₱${productPricePHP.toFixed(2)}`;
+            document.getElementById("cart-items").appendChild(cartItem);
+
+            // Update total price
+            totalPrice += productPricePHP;
+            document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
+        }
+
+        function checkout() {            
+            document.getElementById("cart-items").innerHTML = "";
+            totalPrice = 0;
+            document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
+        }
+        
+        
+        
+    </script>
+    </nav>
+</body>
+</html>
