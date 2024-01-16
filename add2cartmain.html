@@ -16,6 +16,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            
         }
 
         button.addToCartBtn:hover {
@@ -43,10 +44,12 @@
     <title>ADD TO CART</title>
 </head>
 <body>
-<h5>ILLUMINATE FIXED GEAR SHOP</h5>
+<h5>CART</h5>
 
 <hr>
-<h1>CART</h1>
+
+<section id="frameset"> 
+<h1>FRAMESET</h1>
 
 <hr>
 
@@ -145,13 +148,123 @@
         <button class="addToCartBtn" onclick="addToCart('CINELLI', 52438)">ADD TO CART</button>
     </div>
     
+    </section>
+    
+  
+    <hr>
+    <h1>DRIVETRAIN</h1>
+    
+    <hr>
+    
+     <div class="product">
+        <img src="dt1.jpeg" width="500" height="350">
+        <p>SKEACE POWERPOINT CRANKSET</p>
+        <p>Price: ₱10,886</p>
+        <button class="addToCartBtn" onclick="addToCart('SKEACE POWERPOINT CRANKSET', 10886)">ADD TO CART</button>
+    </div
+    
+    <br>
+    
+     <div class="product">
+        <img src="dt2.jpeg" width="500" height="350">
+        <p>DR DIGIRIT 70T CARBON</p>
+        <p>Price: ₱19,317</p>
+        <button class="addToCartBtn" onclick="addToCart('DR DIGIRIT 70T CARBON', 19317)">ADD TO CART</button>
+    </div>
+    
+    <br>
+    
+     <div class="product">
+        <img src="dt3.jpeg" width="500" height="350">
+        <p>IZUMI SUPER TOUGHNESS CHAIN</p>
+        <p>Price: ₱3,908</p>
+        <button class="addToCartBtn" onclick="addToCart('IZUMI SUPER TOUGHNESS CHAIN', 3908)">ADD TO CART</button>
+    </div>
+    
+     <hr>
+    <h1>WHEELSET</h1>
+    
+    <hr>
+    
+     <div class="product">
+        <img src="ws1.jpeg" width="500" height="350">
+        <p>FFWD RYOTT77 TRACK WHEELSET </p>
+        <p>Price: ₱94,761</p>
+        <button class="addToCartBtn" onclick="addToCart('FFWD RYOTT77 TRACK WHEELSET', 94761)">ADD TO CART</button>
+    </div>
+    
+    
+     <div class="product">
+        <img src="ws2.jpeg" width="500" height="350">
+        <p>FFWD FIVE-T</p>
+        <p>Price: ₱94,761</p>
+        <button class="addToCartBtn" onclick="addToCart('FFWD RYOTT77 TRACK WHEELSET', 94761)">ADD TO CART</button>
+    </div>
+  
+  <div class="product">
+        <img src="ws3.jpeg" width="500" height="350">
+        <p>FFWD FIVE-T DISC-T LION WHEELSET</p>
+        <p>Price: ₱218,410</p>
+        <button class="addToCartBtn" onclick="addToCart('FFWD FIVE-T DISC-T LION WHEELSET', 217410)">ADD TO CART</button>
+    </div>
+    
+    <div class="product">
+        <img src="ws4.jpeg" width="500" height="350">
+        <p>FFWD DISC-T SL</p>
+        <p>Price: ₱83,606</p>
+        <button class="addToCartBtn" onclick="addToCart('FFWD DISC-T SL', 83606)">ADD TO CART</button>
+    </div>
+    
+     <hr>
+        <h2>COCKPIT</h2>
+      
+        
+        <hr>
+
+        
+     <div class="product">
+        <img src="cp1.jpeg" width="500" height="350">
+        <p>CINELLI DROPBAR 31.8</p>
+        <p>Price: ₱5,321</p>
+        <button class="addToCartBtn" onclick="addToCart('CINELLI DROPBAR 31.8', 5321)">ADD TO CART</button>
+    </div>
+    
+    
+     <div class="product">
+        <img src="cp2.jpeg" width="500" height="350">
+        <p>KASHIMAX AERO CLASSIC</p>
+        <p>Price: ₱5,839</p>
+        <button class="addToCartBtn" onclick="addToCart('KASHIMAX AERO CLASSIC', 5839)">ADD TO CART</button>
+    </div>
+  
+  <div class="product">
+        <img src="cp3.jpeg" width="500" height="350">
+        <p>VELOBIKE STEM 20MM</p>
+        <p>Price: ₱11,700</p>
+        <button class="addToCartBtn" onclick="addToCart('VELOBIKE STEM 20MM', 217410)">ADD TO CART</button>
+    </div>
+    
+    <div class="product">
+        <img src="cp4.jpeg" width="500" height="350">
+        <p>PINARELLO CARBON DURABLE AERO</p>
+        <p>Price: ₱10,127</p>
+        <button class="addToCartBtn" onclick="addToCart('PINARELLO CARBON DURABLE AERO', 10127)">ADD TO CART</button>
+    </div>
+  
+  
+    
+    
     
 
     <div id="cart">
         <h5>YOUR CART</h5>
         <ul id="cart-items"></ul>
         <p>Total Price: ₱<span id="totalPrice">0.00</span></p>
-        <button onclick="checkout()">BUY NOW</button>
+      <button onclick="checkout()"> <a href="login.html">BUY NOW</a></button>
+    
+      <button class="backBtn"><a href="business.html">Back</a></button>
+
+
     </div>
 
     <script>
@@ -167,8 +280,7 @@
             document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
         }
 
-        function checkout() {
-            alert("Thank you for your purchase! Your items have been added to delivery.");
+        function checkout() {            
             document.getElementById("cart-items").innerHTML = "";
             totalPrice = 0;
             document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
